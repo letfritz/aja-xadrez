@@ -63,37 +63,49 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-12">
             Por que Nossa Academia?
           </h2>
+          <p className="text-center mb-12 text-muted-foreground">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="text-xl text-center font-semibold mb-4">
                   Metodologia Comprovada
                 </h3>
                 <p>
-                  Nossa metodologia única combina teoria e prática para
-                  resultados rápidos e duradouros.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">
-                  Mestres Renomados
+                <h3 className="text-xl text-center font-semibold mb-4">
+                  Exercícios Práticos
                 </h3>
                 <p>
-                  Aprenda com três grandes mestres internacionais com vasta
-                  experiência em competições.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="text-xl text-center font-semibold mb-4">
                   Suporte Personalizado
                 </h3>
                 <p>
-                  Receba feedback individual e acompanhamento personalizado do
-                  seu progresso.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </CardContent>
             </Card>
@@ -110,39 +122,43 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Mestre João Silva",
-                title: "Grande Mestre Internacional",
+                name: "Felipe El Debs",
+                title: "Grande Mestre",
                 description:
-                  "Campeão brasileiro por 5 vezes e treinador de campeões nacionais.",
-                image: "/images/mestre1.jpg",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                image: "/images/mestre.svg",
               },
               {
-                name: "Mestre Maria Santos",
-                title: "Mestre Internacional Feminino",
-                description:
-                  "Representante olímpica e especialista em estratégias de meio-jogo.",
-                image: "/images/mestre2.jpg",
-              },
-              {
-                name: "Mestre Pedro Costa",
+                name: "Diego Di Berardino",
                 title: "Mestre Internacional",
                 description:
-                  "Especialista em finais e autor de livros sobre xadrez.",
-                image: "/images/mestre3.jpg",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                image: "/images/mestre.svg",
+              },
+              {
+                name: "Alvaro Aranha",
+                title: "Mestre FIDE",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                image: "/images/mestre.svg",
               },
             ].map((mestre, index) => (
               <Card key={index} className="h-full flex flex-col">
                 <CardContent className="p-6 flex flex-col flex-1">
-                  <div className="aspect-square relative mb-4">
-                    <Image
-                      src={mestre.image}
-                      alt={mestre.name}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="relative w-20 h-20 flex-shrink-0">
+                      <Image
+                        src={mestre.image}
+                        alt={mestre.name}
+                        fill
+                        className="object-cover rounded-full"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">{mestre.name}</h3>
+                      <p className="text-blue-600">{mestre.title}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{mestre.name}</h3>
-                  <p className="text-blue-600 mb-2">{mestre.title}</p>
                   <p className="flex-1">{mestre.description}</p>
                 </CardContent>
               </Card>
@@ -170,22 +186,22 @@ export default function Home() {
                   {
                     name: "Carlos Oliveira",
                     rating: "5/5",
-                    text: "A metodologia dos mestres transformou completamente meu jogo. Em 6 meses, subi mais de 300 pontos no rating.",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                   },
                   {
                     name: "Ana Beatriz",
                     rating: "5/5",
-                    text: "As aulas são incríveis! Os mestres são muito didáticos e sempre disponíveis para tirar dúvidas.",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                   },
                   {
                     name: "Pedro Santos",
                     rating: "5/5",
-                    text: "O melhor investimento que fiz no meu xadrez. A evolução foi notável em poucos meses.",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                   },
                   {
                     name: "Mariana Costa",
                     rating: "5/5",
-                    text: "A estrutura do curso é perfeita, desde o básico até o avançado. Recomendo muito!",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                   },
                 ].map((depoimento, index) => (
                   <CarouselItem
@@ -220,7 +236,10 @@ export default function Home() {
             Comece Sua Jornada no Xadrez
           </h2>
           <p className="text-xl mb-8">
-            Junte-se a centenas de alunos que já transformaram seu jogo
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </p>
           <Button
             size="lg"
@@ -239,17 +258,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <p>
-              © 2024 AJA - Academia de Jogadores Ambiciosos. Todos os direitos
-              reservados.
+              © {new Date().getFullYear()} AJA - Academia de Jogadores
+              Ambiciosos. Todos os direitos reservados.
             </p>
             <a
-              href="https://instagram.com/academiaxadrez"
+              href="https://www.instagram.com/xadrezaja/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-yellow-500"
             >
               <Instagram />
-              <span>@academiaxadrez</span>
+              <span>@xadrezaja</span>
             </a>
           </div>
         </div>
