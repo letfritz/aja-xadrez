@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Starter App",
-  description: "Base template for my personal apps",
+  title: "AJA - Academia de Jogadores Ambiciosos",
+  description:
+    "Treine cálculo com metodologia soviética e mestres que já formaram grandes jogadores!",
 };
 
 export default async function RootLayout({
