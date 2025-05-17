@@ -5,10 +5,7 @@ import {
   Bell,
   ChevronsUpDown,
   CreditCard,
-  LogOut,
   Settings,
-  Settings2,
-  Sparkles,
 } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,9 +24,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { signOut, useSession } from "next-auth/react";
-import LogoutButton from "./auth/logout-button";
-import useProfileStore from "@/features/profile/hooks/use-profile-store";
 
 export function NavUser({
   user,
@@ -41,8 +35,6 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
-  const { data } = useSession();
-  const { openModal } = useProfileStore();
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -57,10 +49,8 @@ export function NavUser({
                 <AvatarFallback className="rounded-lg">CN</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">
-                  {data?.user.name}
-                </span>
-                <span className="truncate text-xs">{data?.user.email}</span>
+                <span className="truncate font-semibold">{user.name}</span>
+                <span className="truncate text-xs">{user.email}</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -78,10 +68,7 @@ export function NavUser({
                   <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">
-                    {data?.user.name}
-                  </span>
-                  <span className="truncate text-xs">{data?.user.email}</span>
+                  <span className="truncate font-semibold"></span>
                 </div>
               </div>
             </DropdownMenuLabel>
@@ -94,7 +81,7 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem onClick={openModal}>
+              <DropdownMenuItem>
                 <BadgeCheck />
                 Profile
               </DropdownMenuItem>
@@ -108,9 +95,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <LogoutButton />
-            </DropdownMenuItem>
+            <DropdownMenuItem></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
