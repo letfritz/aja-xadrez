@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "emailDev": "email dev",
-    "build": "NEXT_TYPESCRIPT_CHECK=0 next build --no-lint",
+    "build": "prisma generate && NEXT_TYPESCRIPT_CHECK=0 next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },
