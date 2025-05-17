@@ -3,13 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { TestimonialsSection } from "./components/testimonials-section";
 
 export default function Home() {
   return (
@@ -174,70 +168,7 @@ export default function Home() {
       </section>
 
       {/* Depoimentos Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
-            O que Nossos Alunos Dizem
-          </h2>
-          <div className="relative px-4 md:px-12">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent>
-                {[
-                  {
-                    name: "Carlos Oliveira",
-                    rating: "5/5",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  },
-                  {
-                    name: "Ana Beatriz",
-                    rating: "5/5",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  },
-                  {
-                    name: "Pedro Santos",
-                    rating: "5/5",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  },
-                  {
-                    name: "Mariana Costa",
-                    rating: "5/5",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  },
-                ].map((depoimento, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="basis-full md:basis-1/2 lg:basis-1/3"
-                  >
-                    <Card className="h-full flex flex-col">
-                      <CardContent className="p-4 md:p-6 flex flex-col flex-1">
-                        <p className="text-base md:text-lg mb-4 flex-1">
-                          "{depoimento.text}"
-                        </p>
-                        <div className="flex justify-between items-center mt-auto">
-                          <p className="font-semibold text-sm md:text-base">
-                            {depoimento.name}
-                          </p>
-                          <p className="text-yellow-500 text-sm md:text-base">
-                            {depoimento.rating}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
-            </Carousel>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-[#C6AF78] text-white">
