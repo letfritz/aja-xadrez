@@ -27,6 +27,8 @@
     "@react-email/components": "0.0.33",
     "@tanstack/react-query": "^5.66.8",
     "@tanstack/react-query-devtools": "^5.66.8",
+    "@types/axios": "^0.9.36",
+    "axios": "^1.9.0",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
