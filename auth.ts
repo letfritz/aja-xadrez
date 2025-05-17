@@ -5,7 +5,6 @@ import email from "next-auth/providers/email";
 import { signInSchema } from "./lib/zod";
 import { logger } from "./lib/logger";
 import { GetUserByEmail } from "./app/actions/user";
-import { db } from "./lib/prisma";
 import bcrypt from "bcryptjs";
 
 declare module "next-auth" {
@@ -34,7 +33,6 @@ const log = logger.child({
   module: "auth",
 });
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  adapter: PrismaAdapter(db),
   session: {
     strategy: "jwt",
   },

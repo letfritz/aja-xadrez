@@ -1,14 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { db } from "@/lib/prisma";
-
+import {
+  createTestimonial,
+  CreateTestimonialData,
+  deleteTestimonial,
+  getTestimonials,
+  updateTestimonial,
+} from "@/actions/testimonials";
+import prisma from "@/lib/prisma";
 interface Testimonial {
   id: string;
-  title: string;
-  content: string;
-  playerName: string;
-}
-
-interface CreateTestimonialData {
   title: string;
   content: string;
   playerName: string;
@@ -22,7 +22,7 @@ export const useGetTestimonials = () => {
   return useQuery({
     queryKey: [TESTIMONIALS_QUERY_KEY],
     queryFn: async () => {
-      let testimonials = await db.testimonials.findMany();
+      let testimonials = await getTestimonials();
       return testimonials;
     },
   });
@@ -33,14 +33,7 @@ export const useCreateTestimonial = () => {
 
   return useMutation({
     mutationFn: async (data: CreateTestimonialData) => {
-      let result = await db.testimonials.create({
-        data: {
-          content: data.content,
-          playerName: data.title,
-          title: data.title,
-        },
-      });
-      return result;
+      return createTestimonial(data);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [TESTIMONIALS_QUERY_KEY] });
@@ -53,11 +46,27 @@ export const useRemoveTestimonial = () => {
 
   return useMutation({
     mutationFn: async (testmonialId: number) => {
-      await db.testimonials.delete({
-        where: {
-          id: testmonialId,
-        },
-      });
+      await deleteTestimonial(testmonialId);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: [TESTIMONIALS_QUERY_KEY] });
+    },
+  });
+};
+
+export const useUpdateTestimonial = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      id,
+      data,
+    }: {
+      id: number;
+      data: CreateTestimonialData;
+    }) => {
+      const result = await updateTestimonial(id, data);
+      return result;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [TESTIMONIALS_QUERY_KEY] });
