@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Instagram } from "lucide-react";
+import { Instagram, Target } from "lucide-react";
 import { TestimonialsSection } from "./components/testimonials-section";
 
 export default function Home() {
@@ -55,51 +55,92 @@ export default function Home() {
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
-            Por que Nossa Academia?
+            Treine com a AJA Xadrez
           </h2>
-          <p className="text-center mb-8 md:mb-12 text-muted-foreground text-base md:text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Card>
+          <div className="flex flex-col md:flex-row items-start gap-6 md:gap-12 py-8">
+            <div className="w-full md:w-3/5">
+              <p className="text-center mb-8 md:mb-12 text-muted-foreground text-base md:text-lg">
+              A <span className="font-bold text-[#C6AF78]">Academia para Jogadores Ambiciosos de Xadrez (AJA Xadrez) </span>
+              nasceu da ideia de três amigos que compartilham a filosofia de valorizar o estudo da herança deixada pelos 
+              grandes jogadores da história. Nosso objetivo é oferecer um projeto diferenciado, com aulas e treinamentos voltados ao 
+              desenvolvimento de enxadristas ambiciosos, indo além das abordagens tradicionais disponíveis no mercado.
+              <br className="hidden md:block" /><br className="hidden md:block" />
+              <div className="flex items-start gap-3 ml-16 mr-28">
+                <span className="font-bold text-[#C6AF78] text-4xl leading-none">!!</span>
+                <p className="text-base md:text-lg text-muted-foreground text-justify">
+                  Nos inspiramos no conceito de <span className="font-bold text-[#C6AF78]">"training camps"</span>, intensivos
+                  como preparação para torneios, uma metodologia amplamente utilizada pela antiga escola soviética.
+                </p>
+              </div>
+              <br className="hidden md:block" /><br className="hidden md:block" />
+              A imersão nos estudos em um curto período, com um objetivo bem definido, apresenta vantagens significativas 
+              em relação a um estudo mais espaçado, muitas vezes proporcionando melhores resultados com um menor 
+              investimento de tempo. Atualmente, muitos jogadores que desejam evoluir, mas não são profissionais,
+               encontram dificuldades para dedicar dois ou três meses inteiros aos estudos, por mais que sejam apaixonados
+                pelo xadrez. Como consequência, acabam perdendo ritmo e, em alguns casos, desanimando.
+              </p>
+            </div>
+            
+            <Card className="w-full md:w-2/5">
               <CardContent className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl text-center font-semibold mb-4">
                   Metodologia Comprovada
                 </h3>
-                <p className="text-sm md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                <p className="text-sm md:text-base text-justify">
+                  A propõe um formato inovador: treinamentos intensivos de quatro a sete dias, focando em temas específicos que aprimoram a compreensão do jogo e, ao mesmo tempo, preparam os alunos para seus desafios em torneios importantes.
+                  <span className="font-bold text-[#C6AF78]"> ex-campeão mundial Mikhail Botvinnik</span>, que ajudou a 
+                  formar três campeões mundiais: <span className="font-bold text-[#C6AF78]">Anatoly Karpov</span>,
+                  <span className="font-bold text-[#C6AF78]"> Garry Kasparov</span> e 
+                  <span className="font-bold text-[#C6AF78]"> Vladimir Kramnik</span>. A ideia desse tipo de treinamento 
+                  é semelhante à de uma academia de ginástica: preparar os jogadores para atingirem a melhor forma no 
+                  momento mais importante, próximo aos torneios. Além disso, fortalece e consolida conceitos fundamentais 
+                  para o desenvolviamento do enxadrista.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <p className="text-center text-muted-foreground text-base md:text-lg">
+            
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <Card>
+              <CardContent className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl text-center font-semibold mb-4">
+                  AJA Xadrez
+                </h3>
+                <p className="text-sm md:text-base text-justify">
+                  Propõe um formato inovador: treinamentos intensivos de quatro 
+                  a sete dias, focando em temas específicos que aprimoram a 
+                  compreensão do jogo e, ao mesmo tempo, preparam os alunos para 
+                  seus desafios em torneios importantes.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl text-center font-semibold mb-4">
-                  Exercícios Práticos
+                  Nossa equipe
                 </h3>
-                <p className="text-sm md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                <p className="text-sm md:text-base text-justify">
+                   Composta por um Grande Mestre (GM), um Mestre Internacional (MI) e um Mestre FIDE (MF), 
+                   todos com ampla experiência como jogadores, mas, acima de tudo, comprovadamente competentes no 
+                   desenvolvimento de enxadristas ambiciosos e na formação de campeões. 
+                   <span className="font-bold text-[#C6AF78]"> Na nossa academia, a principal propaganda não são os 
+                    professores, mas sim os resultados dos alunos.</span>
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl text-center font-semibold mb-4">
-                  Suporte Personalizado
+                  O Melhor de Cada Instrutor
                 </h3>
-                <p className="text-sm md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                <p className="text-sm md:text-base text-justify">
+                  Assim como acontecia na escola de Botvinnik, cada treinador contribui com suas visões e conhecimentos 
+                  especializados. Essa abordagem, que valorizamos na AJA Xadrez, permite que cada 
+                  treinador compartilhe conhecimentos aprofundados em sua especialidade, garantindo que o aluno receba o 
+                  melhor de cada instrutor. 
                 </p>
               </CardContent>
             </Card>
@@ -113,49 +154,102 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
             Quem Somos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-6">
             {[
               {
-                name: "Felipe El Debs",
+                name: "GM Felipe El Debs",
                 title: "Grande Mestre",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                image: "/images/mestre.svg",
+                  <div>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>1999 – Campeão Brasileiro Sub-14.</li>
+                      <li>2002 / 2005 – Campeão Brasileiro Sub-20.</li>
+                      <li>2010 – Título de Grande Mestre (GM) pela FIDE.</li>
+                      <li>2014 – Vice-Campeão Brasileiro Absoluto.</li>
+                      <li>2015 – Campeão do II Washington Chess Congress.</li>
+                      <li>2017 – Participante da Copa do Mundo da FIDE.</li>
+                      <li>2008 / 2014 / 2016 / 2018 – Representante do Brasil na Olimpíada de Xadrez.</li>
+                    </ul>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>Mais de 100 alunos, de todas as idades, nos últimos 20 anos.</li>
+                      <li>Especializado em análise aprofundada das partidas dos alunos para direcionar o treinamento futuro.</li>
+                      <li>Ajudou na formação de mais de uma dezena de campeões brasileiros de categoria.</li>
+                      <li>Contribuiu para o desenvolvimento de vários jovens Mestres FIDE (MFs) e Mestres Internacionais 
+                      (MIs) do cenário nacional.</li>
+                      <li>Autor de um curso sobre a Dragão Acelerada e de mini cursos para o site Chess.com.</li>
+                      <li>Cofundador do canal de entrevistas Xadrez Online.</li>
+                    </ul>
+                  </div>,
+                image: "/images/el_debs.jpg",
               },
               {
-                name: "Diego Di Berardino",
+                name: "MI Diego Di Berardino",
                 title: "Mestre Internacional",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                image: "/images/mestre.svg",
+                  <div>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>Mestre Internacional de Xadrez, com duas Normas de Grande Mestre.</li>
+                      <li>Integrante da equipe Olímpica do Brasil nas Olimpíadas de Baku 2016 e Budapeste 2024.</li>
+                      <li>Representante do Brasil na Copa do Mundo da Rússia, 2011.</li>
+                      <li>Vice-campeão Brasileiro Absoluto de Xadrez.</li>
+                      <li>Sete vezes Campeão do Estado do Rio de Janeiro.</li>
+                      <li>Campeão de diversas etapas de Abertos do Brasil.</li>
+                      <li>Pico de Rating FIDE clássico - 2528.</li>
+                    </ul>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>Atuação como treinador na trajetória de jovens promessas do xadrez brasileiro.</li>
+                      <li>Auxílio na preparação de atletas com atuação destacada em campeonatos estaduais, brasileiros,
+                         sulamericanos e panamericanos de categoria, e  competições em geral, incluindo títulos e medalhas.</li>
+                    </ul>
+                  </div>,
+                image: "/images/di_berardino.jpg",
               },
               {
-                name: "Alvaro Aranha",
+                name: "MF Alvaro Aranha",
                 title: "Mestre FIDE",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                image: "/images/mestre.svg",
+                  <div>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>Mestre da FIDE desde 2006.</li>
+                      <li>2 normas de Mestre Internacional.</li>
+                      <li>Vice-campeão Mundial Juvenil por Equipes em 1999.</li>
+                    </ul>
+                    <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li>Treinador da equipe Olímpica Feminina nas olimpíadas de 2010, 2012 e 2014.</li>
+                      <li>Participou de 4 Mundiais e 13 Panamericanos.</li>
+                      <li>Mais de 30 campeões brasileiros nas mais diversas categorias.</li>
+                      <li>Treinador do Projeto de Xadrez do Colégio Augusto Laranja (Atual Tricampeão Brasileiro Escolar).</li>
+                      <li>Esteve na Rússia em 2019 visitando as melhores escolas do xadrez mundial e alguns dos mais renomados 
+                        treinadores internacionais.</li>
+                        <li>Autor do Curso “A Moderna Escola Russa de Xadrez”.</li>
+                    </ul>
+                  </div>,
+                image: "/images/alvaro_aranha.png",
               },
             ].map((mestre, index) => (
-              <Card key={index} className="h-full flex flex-col">
-                <CardContent className="p-4 md:p-6 flex flex-col flex-1">
+              <Card key={index} className="flex flex-col md:flex-row overflow-hidden">
+                <div className="w-full md:w-1/4">
+                  <div className="bg-gray-100 p-4">
+                    <h3 className="text-lg font-semibold text-black opacity-70">{mestre.name}</h3>
+                  </div>
+                  {/* Imagem abaixo do título */}
+                  <div className="w-full h-64 md:h-full relative">
+                    <Image
+                      src={mestre.image}
+                      alt={mestre.name}
+                      fill
+                      className="object-cover "
+                    />
+                  </div>
+                </div>
+                <CardContent className="p-4 md:p-6 flex flex-col flex-1 overflow-y-auto max-h-[400px] sm:max-h-none">
                   <div className="flex items-start gap-3 md:gap-4 mb-4">
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-                      <Image
-                        src={mestre.image}
-                        alt={mestre.name}
-                        fill
-                        className="object-cover rounded-full"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-semibold">
-                        {mestre.name}
-                      </h3>
-                      <p className="text-blue-600 text-sm md:text-base">
-                        {mestre.title}
-                      </p>
-                    </div>
                   </div>
                   <p className="flex-1 text-sm md:text-base">
                     {mestre.description}
@@ -167,32 +261,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Depoimentos Section */}
-      <TestimonialsSection />
-
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-[#C6AF78] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-            Comece Sua Jornada no Xadrez
+            Venha para o Training Camp
           </h2>
-          <p className="text-lg md:text-xl mb-6 md:mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <div className="mb-6 md:mb-8">
+            <p className="text-lg md:text-2xl mx-18 text-justify">
+              Nosso compromisso é fornecer material de altíssima qualidade, com preparo minucioso, aulas didáticas e 
+              interativas, além de exercícios práticos que fixam os conceitos estudados. Dessa forma, o aluno não apenas 
+              estará em forma para seu objetivo específico, mas também adquirirá novas ferramentas para toda a sua carreira enxadrística. 
+            </p>
+            <br className="hidden md:block" /><br className="hidden md:block" />
+            <p className="text-lg md:text-2xl">
+              Queremos ajudar enxadristas determinados a progredir, mas que carecem de metodologia e direcionamento. 
+              Aqui não prometemos fórmulas mágicas, mas acreditamos que, com orientação correta e trabalho duro, você poderá alcançar suas metas!
+            </p>
+          </div>
           <Button
             size="lg"
-            className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg mb-6 md:mb-8"
             onClick={() =>
               window.open("https://pay.hotmart.com/seu-link-aqui", "_blank")
             }
           >
-            Inscreva-se Agora
+            Comece Agora
           </Button>
+          <p className="text-base md:text-lg mb-6 md:mb-8">
+            No futuro, além dos training camps, pretendemos oferecer outros serviços. Além disso, cada grupo de alunos que 
+            participar dos nossos treinamentos terá assistência via WhatsApp por 15 dias após o evento, garantindo acompanhamento e suporte contínuo.
+          </p>
+          <p className="text-lg md:text-2xl font-bold">
+            Esperamos que gostem do nosso projeto!
+          </p>
+          
         </div>
       </section>
+
+
+      {/* Depoimentos Section */}
+      <TestimonialsSection />
 
       {/* Footer */}
       <footer className="bg-black text-white py-6 md:py-8">

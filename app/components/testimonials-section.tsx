@@ -54,7 +54,7 @@ export function TestimonialsSection() {
                         </Button>
                       </div>
                       <div className="flex-1 flex flex-col items-center justify-center max-w-3xl mx-auto text-center">
-                        <p className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed whitespace-pre-wrap break-words">
+                        <p className="text-base md:text-xl lg:text-xl mb-8 leading-relaxed whitespace-pre-wrap break-words">
                           "{selectedTestimonial.content}"
                         </p>
                         <p className="font-semibold text-base md:text-lg text-[#C6AF78]">
