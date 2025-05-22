@@ -25,6 +25,9 @@ export default async function ProtectedLayout({
             <div className="flex items-center gap-2 px-4">
               <SidebarTrigger className="-ml-1" />
               <Separator orientation="vertical" className="mr-2 h-4" />
+              <p className="text-lg md:text-xl text-[#C6AF78] font-bold">
+                Acesso Administrador
+              </p>
             </div>
           </header>
           {children}

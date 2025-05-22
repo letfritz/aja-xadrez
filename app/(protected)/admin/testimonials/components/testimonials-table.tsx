@@ -50,6 +50,9 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
     playerName: "",
   });
 
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [testimonialToDelete, setTestimonialToDelete] = useState<number | null>(null);
+
   const handleEdit = (testimonial: Testimonial) => {
     setSelectedTestimonial(testimonial);
     setFormData({
@@ -72,18 +75,18 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
       setIsEditModalOpen(false);
       setSelectedTestimonial(null);
       setFormData({ title: "", content: "", playerName: "" });
-      toast.success("Testimonial updated successfully!");
+      toast.success("Depoimento atualizado com sucesso!");
     } catch (error) {
-      toast.error("Error updating testimonial");
+      toast.error("Erro ao atualizar depoimento.");
     }
   };
 
   const handleDelete = async (id: number) => {
     try {
       await removeTestimonial.mutateAsync(id);
-      toast.success("Testimonial deleted successfully!");
+      toast.success("Depoimento deletado com sucesso!");
     } catch (error) {
-      toast.error("Error deleting testimonial");
+      toast.error("Erro ao deletar depoimento.");
     }
   };
 
@@ -92,10 +95,10 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Title</TableHead>
-            <TableHead>Player Name</TableHead>
-            <TableHead>Content</TableHead>
-            <TableHead>Actions</TableHead>
+            <TableHead>Treinador</TableHead>
+            <TableHead>Jogador</TableHead>
+            <TableHead>Depoimento</TableHead>
+            <TableHead>Ação</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -115,7 +118,10 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
                 </Button>
                 <Button
                   variant="destructive"
-                  onClick={() => handleDelete(testimonial.id)}
+                  onClick={() => {
+                  setTestimonialToDelete(testimonial.id);
+                  setIsDeleteModalOpen(true);
+                }}
                 >
                   Delete
                 </Button>
@@ -125,14 +131,46 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
         </TableBody>
       </Table>
 
+      <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Confirmar Exclusão</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-gray-700">
+            Tem certeza de que deseja excluir este depoimento? Esta ação não pode ser desfeita.
+          </p>
+          <div className="flex justify-end gap-2 mt-4">
+            <Button
+              variant="outline"
+              onClick={() => setIsDeleteModalOpen(false)}
+            >
+              Cancelar
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={async () => {
+                if (testimonialToDelete !== null) {
+                  await handleDelete(testimonialToDelete);
+                  setIsDeleteModalOpen(false);
+                  setTestimonialToDelete(null);
+                }
+              }}
+            >
+              Confirmar
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+
       <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Edit Testimonial</DialogTitle>
+            <DialogTitle>Editar Depoimento</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleUpdate} className="space-y-4">
             <div>
-              <label className="text-sm font-medium">Title</label>
+              <label className="text-sm font-medium">Treinador</label>
               <Input
                 value={formData.title}
                 onChange={(e) =>
@@ -142,7 +180,7 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
               />
             </div>
             <div>
-              <label className="text-sm font-medium">Player Name</label>
+              <label className="text-sm font-medium">Jogador</label>
               <Input
                 value={formData.playerName}
                 onChange={(e) =>
@@ -152,7 +190,7 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
               />
             </div>
             <div>
-              <label className="text-sm font-medium">Content</label>
+              <label className="text-sm font-medium">Depoimento</label>
               <Textarea
                 value={formData.content}
                 onChange={(e) =>
@@ -162,7 +200,7 @@ export function TestimonialsTable({ testimonials }: TestimonialsTableProps) {
               />
             </div>
             <Button type="submit" className="w-full">
-              Update Testimonial
+              Atualizar
             </Button>
           </form>
         </DialogContent>

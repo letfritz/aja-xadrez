@@ -35,24 +35,24 @@ export function CreateTestimonialForm() {
       await createTestimonial.mutateAsync(formData);
       setIsOpen(false);
       setFormData({ title: "", content: "", playerName: "" });
-      toast.success("Testimonial created successfully!");
+      toast.success("Depoimento criado com sucesso!");
     } catch (error) {
-      toast.error(`Error creating testimonial: ${error}`);
+      toast.error(`Erro ao criar depoimento: ${error}`);
     }
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button>Add New Testimonial</Button>
+        <Button>Novo Depoimento</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Testimonial</DialogTitle>
+          <DialogTitle>Criar Novo Depoimento</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm font-medium">Title</label>
+            <label className="text-sm font-medium">Treinador</label>
             <Input
               value={formData.title}
               onChange={(e) =>
@@ -62,7 +62,7 @@ export function CreateTestimonialForm() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium">Player Name</label>
+            <label className="text-sm font-medium">Jogador</label>
             <Input
               value={formData.playerName}
               onChange={(e) =>
@@ -72,7 +72,7 @@ export function CreateTestimonialForm() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium">Content</label>
+            <label className="text-sm font-medium">Depoimento</label>
             <Textarea
               value={formData.content}
               onChange={(e) =>
@@ -82,7 +82,7 @@ export function CreateTestimonialForm() {
             />
           </div>
           <Button type="submit" className="w-full">
-            Create Testimonial
+            Criar
           </Button>
         </form>
       </DialogContent>

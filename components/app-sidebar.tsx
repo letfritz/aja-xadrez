@@ -30,6 +30,10 @@ const data = {
       isActive: true,
       items: [
         {
+          title: "Artigos",
+          url: "/admin/articles",
+        },
+        {
           title: "Depoimentos",
           url: "/admin/testimonials",
         },
