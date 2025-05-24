@@ -2,6 +2,9 @@
 
 import React from "react";
 import { type Metadata } from 'next'
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import AdminAccessCheck from "@/components/admin-layout-client";
 import {
   ClerkProvider,
   RedirectToSignIn,
@@ -20,16 +23,21 @@ import  AppSidebar from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/providers/theme-provider";
 
+const ALLOWED_EMAILS = ["admin@email.com", "fritz.leticia@gmail.com"];
+
 export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const user = await currentUser();
+
   return (
     <ClerkProvider>
       <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
         <SignedIn>
-          <SidebarProvider>
+          <AdminAccessCheck>
+            <SidebarProvider>
             <AppSidebar />
             <SidebarInset>
               <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -44,6 +52,7 @@ export default async function ProtectedLayout({
                 {children}
             </SidebarInset>
           </SidebarProvider>
+          </AdminAccessCheck>
         </SignedIn>
         <SignedOut>
           <RedirectToSignIn />
