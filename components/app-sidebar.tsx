@@ -1,8 +1,6 @@
-"use client";
-
-import * as React from "react";
 import { SquareTerminal } from "lucide-react";
 
+import { currentUser } from "@clerk/nextjs/server";
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
@@ -14,19 +12,22 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
-const data = {
+
+export default async function AppSidebar() {
+  
+  const user = await currentUser();
+
+  const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: user?.fullName || "Usuário",
+    email: user?.emailAddresses[0]?.emailAddress || "sem-email@example.com",
+    avatar: user?.imageUrl || "/default-avatar.png",
   },
-  teams: [],
   navMain: [
     {
       title: "Conteúdos",
       url: "#",
-      icon: SquareTerminal,
+      icon: "square-terminal",
       isActive: true,
       items: [
         {
@@ -41,12 +42,11 @@ const data = {
     },
   ],
   projects: [],
-};
+  };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader></SidebarHeader>
+    <Sidebar collapsible="icon">
+      <SidebarHeader />
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
