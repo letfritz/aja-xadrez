@@ -65,7 +65,7 @@ export default function Home() {
               grandes jogadores da história. Nosso objetivo é oferecer um projeto diferenciado, com aulas e treinamentos voltados ao 
               desenvolvimento de enxadristas ambiciosos, indo além das abordagens tradicionais disponíveis no mercado.
               <br className="hidden md:block" /><br className="hidden md:block" />
-              <div className="flex items-start gap-3 ml-16 mr-28">
+              <div className="flex items-start gap-3 ml-16 mr-18">
                 <span className="font-bold text-[#C6AF78] text-4xl leading-none">!!</span>
                 <p className="text-base md:text-lg text-muted-foreground text-justify">
                   Nos inspiramos no conceito de <span className="font-bold text-[#C6AF78]">"training camps"</span>, intensivos
