@@ -23,7 +23,8 @@ import  AppSidebar from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-const ALLOWED_EMAILS = ["admin@email.com", "fritz.leticia@gmail.com"];
+const ALLOWED_EMAILS = ["felipeeldebs@gmail.com", "diegoberardino@gmail.com", 
+  "alvinik79@gmail.com", "fritz.leticia@gmail.com"];
 
 export default async function ProtectedLayout({
   children,
