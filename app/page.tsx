@@ -34,8 +34,7 @@ export default function Home() {
               Academia de Jogadores Ambiciosos
             </h1>
             <p className="text-lg md:text-2xl font-medium">
-              Treine cálculo com metodologia soviética e mestres que já formaram
-              grandes jogadores!
+              Adquira o curso ganhando com e4!
             </p>
           </div>
 

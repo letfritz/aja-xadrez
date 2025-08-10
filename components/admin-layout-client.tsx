@@ -5,7 +5,9 @@ import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-const ALLOWED_EMAILS = ["admin@email.com", "fritz.leticia@gmail.com"];
+const ALLOWED_EMAILS = ["admin@email.com", "fritz.leticia@gmail.com", 
+  "felipeeldebs@gmail.com", "diegoberardino@gmail.com", "alvinik79@gmail.com", 
+"leticia.fritz@estudante.ufjf.br"];
 
 export default function AdminAccessCheck({
   children,

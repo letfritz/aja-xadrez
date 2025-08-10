@@ -24,7 +24,7 @@ import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 const ALLOWED_EMAILS = ["felipeeldebs@gmail.com", "diegoberardino@gmail.com", 
-  "alvinik79@gmail.com", "fritz.leticia@gmail.com"];
+  "alvinik79@gmail.com", "fritz.leticia@gmail.com", "leticia.fritz@estudante.ufjf.br"];
 
 export default async function ProtectedLayout({
   children,
