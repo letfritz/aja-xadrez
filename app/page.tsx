@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Target } from "lucide-react";
 import { TestimonialsSection } from "./components/testimonials-section";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -41,8 +43,7 @@ export default function Home() {
           <Button
             size="lg"
             className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg"
-            onClick={() =>
-              window.open("https://pay.hotmart.com/seu-link-aqui", "_blank")
+            onClick={() => router.push("/curso-e4")
             }
           >
             Comece Agora
@@ -282,7 +283,7 @@ export default function Home() {
             size="lg"
             className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg mb-6 md:mb-8"
             onClick={() =>
-              window.open("https://pay.hotmart.com/seu-link-aqui", "_blank")
+              window.open("https://hotmart.com/pt-br/marketplace/produtos/training-camp-ajaxadrez-calculo-o-metodo-de-treinamento-que-forma-campeoes/D98570432Q", "_blank")
             }
           >
             Comece Agora
