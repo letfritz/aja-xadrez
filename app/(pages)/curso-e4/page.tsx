@@ -37,7 +37,7 @@ export default function Home() {
 
                 {/* Texto e botão */}
                 <div className="flex flex-col items-center md:items-start justify-start gap-2 text-center md:text-left">
-                    <h1 className="text-lg md:text-2xl font-medium">
+                    <h1 className="text-lg md:text-3xl font-medium">
                     Ganhando com 1.e4!
                     </h1>
                     <Button
@@ -96,11 +96,14 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold mb-4 text-center text-[#C6AF78]">
                     Assista à Introdução do Curso
                 </h2>
-                <video
-                    src="/videos/ganhando-com-e4.mkv"
-                    controls
-                    className="w-full rounded-md shadow-lg"
-                />
+                <div className="w-full max-w-xl mx-auto my-8 aspect-video">
+                    <iframe
+                        src="https://www.youtube.com/watch?v=YzKd_a-RiWg"
+                        title="Vídeo"
+                        allowFullScreen
+                        className="w-full h-full rounded-md shadow-lg"
+                    />
+                </div>
                 </div>
 
                 {/* Conteúdo abaixo do vídeo */}
