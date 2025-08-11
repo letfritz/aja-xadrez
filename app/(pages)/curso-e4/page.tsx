@@ -24,32 +24,39 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#C6AF78] to-transparent" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-start">
-      
-                {/* Logo */}
-                <Image
-                    src="/images/logo-background-transparent.png"
-                    alt="AJA Chess Academy"
-                    width={300}
-                    height={100}
-                    className="h-16 md:h-28 w-auto object-contain"
-                />
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-6">
+            
+            {/* Logo */}
+            <Image
+            src="/images/logo-background-transparent.png"
+            alt="AJA Chess Academy"
+            width={300}
+            height={100}
+            className="h-16 md:h-28 w-auto object-contain"
+            />
 
-                {/* Texto e botão */}
-                <div className="flex flex-col items-center md:items-start justify-start gap-2 text-center md:text-left">
-                    <h1 className="text-lg md:text-2xl font-medium">
-                    Ganhando com 1.e4!
-                    </h1>
-                    <Button
-                    size="lg"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg"
-                    onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D", "_blank")}
-                    >
-                    Adquira o Curso
-                    </Button>
-                </div>
+            {/* Texto e botão */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+            <h1 className="text-2xl md:text-4xl font-medium">
+                Ganhando com 1.e4!
+            </h1>
+            <Button
+                size="lg"
+                className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg self-center"
+                onClick={() =>
+                window.open(
+                    "https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D",
+                    "_blank"
+                )
+                }
+            >
+                Adquira o Curso
+            </Button>
             </div>
+            
         </div>
+        </div>
+
       </section>
 
       {/* Por que a Academia Section */}
@@ -96,11 +103,14 @@ export default function Home() {
                 <h2 className="text-3xl font-semibold mb-4 text-center text-[#C6AF78]">
                     Assista à Introdução do Curso
                 </h2>
-                <video
-                    src="/videos/ganhando-com-e4.mkv"
-                    controls
-                    className="w-full rounded-md shadow-lg"
-                />
+                <div className="w-full max-w-xl mx-auto my-8 aspect-video">
+                    <iframe
+                        src="https://www.youtube.com/embed/YzKd_a-RiWg"
+                        title="Vídeo"
+                        allowFullScreen
+                        className="w-full h-full rounded-md shadow-lg"
+                    />
+                </div>
                 </div>
 
                 {/* Conteúdo abaixo do vídeo */}
@@ -138,9 +148,143 @@ export default function Home() {
             </div>
         </div>
         </section>
+    
+    <div className="flex flex-col items-center justify-start text-center md:text-left bg-[#C6AF78] py-6 md:py-10">
+        <Button
+            size="lg"
+            className="BG-BLACK hover:bg-yellow-600 text-white text-base md:text-lg"
+            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D", "_blank")}
+            >
+            Adquira o Curso
+        </Button>
+    </div>
+
+    {/* Mestres Section */}
+          <section className="py-12 md:py-20 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+                Quem Somos
+              </h2>
+              <div className="grid grid-cols-1 gap-6">
+                {[
+                  {
+                    name: "GM Felipe El Debs",
+                    title: "Grande Mestre",
+                    description:
+                      <div>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>1999 – Campeão Brasileiro Sub-14.</li>
+                          <li>2002 / 2005 – Campeão Brasileiro Sub-20.</li>
+                          <li>2010 – Título de Grande Mestre (GM) pela FIDE.</li>
+                          <li>2014 – Vice-Campeão Brasileiro Absoluto.</li>
+                          <li>2015 – Campeão do II Washington Chess Congress.</li>
+                          <li>2017 – Participante da Copa do Mundo da FIDE.</li>
+                          <li>2008 / 2014 / 2016 / 2018 – Representante do Brasil na Olimpíada de Xadrez.</li>
+                        </ul>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>Mais de 100 alunos, de todas as idades, nos últimos 20 anos.</li>
+                          <li>Especializado em análise aprofundada das partidas dos alunos para direcionar o treinamento futuro.</li>
+                          <li>Ajudou na formação de mais de uma dezena de campeões brasileiros de categoria.</li>
+                          <li>Contribuiu para o desenvolvimento de vários jovens Mestres FIDE (MFs) e Mestres Internacionais 
+                          (MIs) do cenário nacional.</li>
+                          <li>Autor de um curso sobre a Dragão Acelerada e de mini cursos para o site Chess.com.</li>
+                          <li>Cofundador do canal de entrevistas Xadrez Online.</li>
+                        </ul>
+                      </div>,
+                    image: "/images/el_debs.jpg",
+                  },
+                  {
+                    name: "MI Diego Di Berardino",
+                    title: "Mestre Internacional",
+                    description:
+                      <div>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>Mestre Internacional de Xadrez, com duas Normas de Grande Mestre.</li>
+                          <li>Integrante da equipe Olímpica do Brasil nas Olimpíadas de Baku 2016 e Budapeste 2024.</li>
+                          <li>Representante do Brasil na Copa do Mundo da Rússia, 2011.</li>
+                          <li>Vice-campeão Brasileiro Absoluto de Xadrez.</li>
+                          <li>Sete vezes Campeão do Estado do Rio de Janeiro.</li>
+                          <li>Campeão de diversas etapas de Abertos do Brasil.</li>
+                          <li>Pico de Rating FIDE clássico - 2528.</li>
+                        </ul>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>Atuação como treinador na trajetória de jovens promessas do xadrez brasileiro.</li>
+                          <li>Auxílio na preparação de atletas com atuação destacada em campeonatos estaduais, brasileiros,
+                             sulamericanos e panamericanos de categoria, e  competições em geral, incluindo títulos e medalhas.</li>
+                        </ul>
+                      </div>,
+                    image: "/images/di_berardino.jpg",
+                  },
+                  {
+                    name: "MF Alvaro Aranha",
+                    title: "Mestre FIDE",
+                    description:
+                      <div>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2">Conquistas no Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>Mestre da FIDE desde 2006.</li>
+                          <li>2 normas de Mestre Internacional.</li>
+                          <li>Vice-campeão Mundial Juvenil por Equipes em 1999.</li>
+                        </ul>
+                        <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                          <li>Treinador da equipe Olímpica Feminina nas olimpíadas de 2010, 2012 e 2014.</li>
+                          <li>Participou de 4 Mundiais e 13 Panamericanos.</li>
+                          <li>Mais de 30 campeões brasileiros nas mais diversas categorias.</li>
+                          <li>Treinador do Projeto de Xadrez do Colégio Augusto Laranja (Atual Tricampeão Brasileiro Escolar).</li>
+                          <li>Esteve na Rússia em 2019 visitando as melhores escolas do xadrez mundial e alguns dos mais renomados 
+                            treinadores internacionais.</li>
+                            <li>Autor do Curso “A Moderna Escola Russa de Xadrez”.</li>
+                        </ul>
+                      </div>,
+                    image: "/images/alvaro_aranha.png",
+                  },
+                ].map((mestre, index) => (
+                  <Card key={index} className="flex flex-col md:flex-row overflow-hidden">
+                    <div className="w-full md:w-1/4">
+                      <div className="bg-gray-100 p-4">
+                        <h3 className="text-lg font-semibold text-black opacity-70">{mestre.name}</h3>
+                      </div>
+                      {/* Imagem abaixo do título */}
+                      <div className="w-full h-64 md:h-full relative">
+                        <Image
+                          src={mestre.image}
+                          alt={mestre.name}
+                          fill
+                          className="object-cover "
+                        />
+                      </div>
+                    </div>
+                    <CardContent className="p-4 md:p-6 flex flex-col flex-1 overflow-y-auto max-h-[400px] sm:max-h-none">
+                      <div className="flex items-start gap-3 md:gap-4 mb-4">
+                      </div>
+                      <p className="flex-1 text-sm md:text-base">
+                        {mestre.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+    
+    <div className="flex flex-col items-center justify-start text-center md:text-left bg-[#C6AF78] py-6 md:py-10">
+        <Button
+            size="lg"
+            className="BG-BLACK hover:bg-yellow-600 text-white text-base md:text-lg"
+            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D", "_blank")}
+            >
+            Adquira o Curso
+        </Button>
+    </div>
+
 
      {/* Depoimentos Section */}
-     <div className="bg-[#C6AF78] py-6 md:py-10">
+     <div>
         <TestimonialsSection />
      </div>
      
