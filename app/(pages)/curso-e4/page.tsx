@@ -62,13 +62,11 @@ export default function Home() {
       {/* Por que a Academia Section */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
             {/* Você pode colocar um título geral aqui, se quiser */}
             </h2>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-            
-            {/* Texto à esquerda */}
+              {/* Texto à esquerda */}
             <div className="text-left">
                 <p className="mb-8 md:mb-12 text-muted-foreground text-base md:text-lg">
                 O novo curso da <span className="font-bold text-[#C6AF78]">AJA Xadrez</span>, 
@@ -94,7 +92,6 @@ export default function Home() {
                 performance nos torneios, ou mesmo simplesmente melhorar seus resultados na internet ou contra os amigos!
                 </p>
             </div>
-
             {/* Coluna direita com vídeo e conteúdo em coluna */}
             <div className="flex flex-col gap-8">
                 
@@ -112,7 +109,7 @@ export default function Home() {
                     />
                 </div>
                 </div>
-
+                </div>
                 {/* Conteúdo abaixo do vídeo */}
                 <Card className="w-full">
                 <CardContent className="p-4 md:p-6">
@@ -142,14 +139,11 @@ export default function Home() {
                     </ul>
                 </CardContent>
                 </Card>
-
-            </div>
-
             </div>
         </div>
-        </section>
-    
-    <div className="flex flex-col items-center justify-start text-center md:text-left bg-[#C6AF78] py-6 md:py-10">
+      </section>
+
+     <div className="flex flex-col items-center justify-start text-center md:text-left bg-[#C6AF78] py-6 md:py-10">
         <Button
             size="lg"
             className="BG-BLACK hover:bg-yellow-600 text-white text-base md:text-lg"
@@ -157,7 +151,7 @@ export default function Home() {
             >
             Adquira o Curso
         </Button>
-    </div>
+    </div> 
 
     {/* Mestres Section */}
           <section className="py-12 md:py-20 bg-gray-50">
@@ -281,14 +275,14 @@ export default function Home() {
             Adquira o Curso
         </Button>
     </div>
+    
 
-
-     {/* Depoimentos Section */}
+    {/* Depoimentos Section */}
      <div>
         <TestimonialsSection />
      </div>
-     
-      {/* Footer */}
+
+    {/* Footer */}
       <footer className="bg-black text-white py-6 md:py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
@@ -308,6 +302,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      
     </main>
   );
 }
