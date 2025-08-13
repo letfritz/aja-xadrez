@@ -218,6 +218,8 @@ export default function Home() {
                       <li>Mestre da FIDE desde 2006.</li>
                       <li>2 normas de Mestre Internacional.</li>
                       <li>Vice-campeão Mundial Juvenil por Equipes em 1999.</li>
+                      <li>Campeão Paulista 2016 e 2018.</li>
+                      <li>Campeão Brasileiro 35+ 2025.</li>
                     </ul>
                     <h3 className="text-sm font-semibold text-[#C6AF78] mb-2 mt-2">Treinador de Xadrez</h3>
                     <ul className="list-disc pl-5 space-y-1 text-sm">
