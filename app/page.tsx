@@ -209,7 +209,7 @@ export default function Home() {
                 image: "/images/di_berardino.jpg",
               },
               {
-                name: "MF Alvaro Aranha",
+                name: "MF Álvaro Aranha",
                 title: "Mestre FIDE",
                 description:
                   <div>
