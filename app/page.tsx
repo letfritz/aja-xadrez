@@ -1,13 +1,62 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { Instagram, Target } from "lucide-react";
+import { Instagram } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { TestimonialsSection } from "./components/testimonials-section";
 
 export default function Home() {
   const router = useRouter();
+  const [coursesCarouselApi, setCoursesCarouselApi] =
+    useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!coursesCarouselApi) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      coursesCarouselApi.scrollNext();
+    }, 4500);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [coursesCarouselApi]);
+
+  const featuredCourses = [
+    {
+      title: "Ganhando com 1.e4",
+      description:
+        "Um repertório completo e objetivo para jogar 1.e4 com segurança e ambição.",
+      href: "/curso-e4",
+      buttonLabel: "Ir para Ganhando com 1.e4",
+    },
+    {
+      title: "Ganhando com Siciliana Okelly",
+      description:
+        "Repertório completo, confiável e ao mesmo tempo combativo contra o lance 1.e4 através da Siciliana O'Kelly.",
+      href: "/curso-okelly",
+      buttonLabel: "Ir para Siciliana Okelly",
+    },
+    {
+      title: "Training Camp",
+      description:
+        "Treinamento intensivo com metodologia da AJA para elevar seu nível competitivo. Cada grupo de alunos que participar dos nossos treinamentos terá assistência via WhatsApp por 15 dias após o evento, garantindo acompanhamento e suporte contínuo.",
+      href: "https://hotmart.com/pt-br/marketplace/produtos/training-camp-ajaxadrez-calculo-o-metodo-de-treinamento-que-forma-campeoes/D98570432Q",
+      buttonLabel: "Ir para Training Camp",
+    },
+  ];
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -25,25 +74,27 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="flex flex-col items-center justify-center gap-4 md:gap-6 mb-6 md:mb-8">
-            <Image
-              src="/images/logo-background-transparent.png"
-              alt="AJA Chess Academy"
-              width={300}
-              height={100}
-              className="h-24 md:h-40 w-auto object-contain"
-            />
+            <Link href="/" aria-label="Ir para a página inicial">
+              <Image
+                src="/images/logo-background-transparent.png"
+                alt="AJA Chess Academy"
+                width={300}
+                height={100}
+                className="h-24 md:h-40 w-auto object-contain"
+              />
+            </Link>
             <h1 className="text-3xl md:text-6xl font-bold">
               Academia de Jogadores Ambiciosos
             </h1>
             <p className="text-lg md:text-2xl font-medium">
-              Adquira o curso ganhando com e4!
+              Adquira nossos cursos!
             </p>
           </div>
 
           <Button
             size="lg"
             className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg"
-            onClick={() => router.push("/curso-e4")
+            onClick={() => router.push("https://hotmart.com/pt-br/club/ajaxadrez")
             }
           >
             Comece Agora
@@ -267,7 +318,7 @@ export default function Home() {
       <section className="py-12 md:py-20 bg-[#C6AF78] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-            Venha para o Training Camp
+            Venha Treinar com a Gente
           </h2>
           <div className="mb-6 md:mb-8">
             <p className="text-lg md:text-2xl mx-18 text-justify">
@@ -276,24 +327,42 @@ export default function Home() {
               estará em forma para seu objetivo específico, mas também adquirirá novas ferramentas para toda a sua carreira enxadrística. 
             </p>
             <br className="hidden md:block" /><br className="hidden md:block" />
-            <p className="text-lg md:text-2xl">
+          </div>
+          <div className="max-w-4xl mx-auto mb-6 md:mb-8">
+            <Carousel
+              opts={{ loop: true }}
+              setApi={setCoursesCarouselApi}
+              className="w-full"
+            >
+              <CarouselContent>
+                {featuredCourses.map((course) => (
+                  <CarouselItem key={course.title}>
+                    <Card className="bg-white text-black">
+                      <CardContent className="p-6 md:p-8 text-center space-y-4">
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#C6AF78]">
+                          {course.title}
+                        </h3>
+                        <p className="text-base md:text-lg text-muted-foreground">
+                          {course.description}
+                        </p>
+                        <Button
+                          size="lg"
+                          className="bg-yellow-500 hover:bg-yellow-600 text-white"
+                          onClick={() => router.push(course.href)}
+                        >
+                          {course.buttonLabel}
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+          <p className="text-lg md:text-2xl">
               Queremos ajudar enxadristas determinados a progredir, mas que carecem de metodologia e direcionamento. 
               Aqui não prometemos fórmulas mágicas, mas acreditamos que, com orientação correta e trabalho duro, você poderá alcançar suas metas!
             </p>
-          </div>
-          <Button
-            size="lg"
-            className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg mb-6 md:mb-8"
-            onClick={() =>
-              window.open("https://hotmart.com/pt-br/marketplace/produtos/training-camp-ajaxadrez-calculo-o-metodo-de-treinamento-que-forma-campeoes/D98570432Q", "_blank")
-            }
-          >
-            Comece Agora
-          </Button>
-          <p className="text-base md:text-lg mb-6 md:mb-8">
-            No futuro, além dos training camps, pretendemos oferecer outros serviços. Além disso, cada grupo de alunos que 
-            participar dos nossos treinamentos terá assistência via WhatsApp por 15 dias após o evento, garantindo acompanhamento e suporte contínuo.
-          </p>
           <p className="text-lg md:text-2xl font-bold">
             Esperamos que gostem do nosso projeto!
           </p>

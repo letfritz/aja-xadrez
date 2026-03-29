@@ -41,14 +41,14 @@ export default function Home() {
             {/* Texto e botão */}
             <div className="flex flex-col items-center md:items-start gap-4">
             <h1 className="text-2xl md:text-4xl font-medium">
-                Ganhando com 1.e4!
+                Ganhando de Pretas com a Siciliana Okelly
             </h1>
             <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-white text-base md:text-lg self-center"
                 onClick={() =>
                 window.open(
-                    "https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D",
+                    "https://hotmart.com/pt-br/marketplace/produtos/ganhando-de-pretas-com-a-siciliana-okelly/O105064397E?sck=HOTMART_SITE&src=",
                     "_blank"
                 )
                 }
@@ -72,27 +72,33 @@ export default function Home() {
               {/* Texto à esquerda */}
             <div className="text-left">
                 <p className="mb-8 md:mb-12 text-muted-foreground text-base md:text-lg">
-                O novo curso da <span className="font-bold text-[#C6AF78]">AJA Xadrez</span>, 
-                <span className="font-bold text-[#C6AF78]"> Ganhando com 1.e4!</span> É o nosso primeiro curso de abertura 
-                e tem como ideia que vocês tenham um repertório completo e confiável para enfrentar todas as defesas 
-                possíveis das pretas. Com <span className="font-bold text-[#C6AF78]">sugestões práticas</span> evitando 
-                que precisem ter uma memória fora do comum para assimilar variantes e com planos claros e intuitivos, o 
-                nosso repertório é <span className="font-bold text-[#C6AF78]">ideal para o jogador que quer evoluir </span> 
-                sem ter que gastar a maior parte do seu tempo de estudo com as aberturas.
+                O mais novo curso da <span className="font-bold text-[#C6AF78]">AJA Xadrez</span> é
+                <span className="font-bold text-[#C6AF78]"> Ganhando de Pretas com a Siciliana Okelly</span>.
                 <br className="hidden md:block" /><br className="hidden md:block" />
-                O curso é composto por uma apresentação do repertório mostrando as linhas sugeridas e 
-                <span className="font-bold text-[#C6AF78]"> 18 vídeos teóricos curtos</span>, onde o jogador aprenderá o 
-                essencial para poder aplicar o nosso repertório na prática.
+                Esse é o nosso 2º curso de aberturas e dessa vez nosso desafio é oferecer um repertório completo, 
+                confiável e ao mesmo tempo combativo contra o lance 1.e4.
                 <br className="hidden md:block" /><br className="hidden md:block" />
-                Os vídeos serão suficientes para a grande maioria dos jogadores até 1900 FIDE ou até 2200 no online. Para 
-                os jogadores mais avançados ou para os que quiserem se aprofundar mais no material, 
-                <span className="font-bold text-[#C6AF78]"> disponibilizamos arquivos teóricos</span> em pgn e pdf com análises 
-                mais detalhadas e complementamos o material com <span className="font-bold text-[#C6AF78]">30 partidas 
-                modelo do repertório sugerido</span> para o aluno entender como as posições funcionam na prática e 
-                analisar partidas completas.
+                Uma das vantagens de ter a <span className="font-bold text-[#C6AF78]">Okelly</span> no repertório é que 
+                é uma variante pouco conhecida e que em muitas ocasiões vai surpreender seu adversário. 
+                Com vários <span className="font-bold text-[#C6AF78]">truques</span> e 
+                <span className="font-bold text-[#C6AF78]">armadilhas</span> ela funciona bem tanto no nível amador, 
+                quanto pra jogadores profissionais e até para grandes mestres como os brasileiros GM Felipe El Debs e 
+                GM Alexandr Fier por exemplo.
                 <br className="hidden md:block" /><br className="hidden md:block" />
-                Temos firme convicção que esse repertório trará ótimos resultados para o jogador que quer melhorar sua 
-                performance nos torneios, ou mesmo simplesmente melhorar seus resultados na internet ou contra os amigos!
+                O curso é composto por <span className="font-bold text-[#C6AF78]">18 vídeos</span> explicativos das 
+                principais variantes e temos como novidade vídeos com 
+                <span className="font-bold text-[#C6AF78]">partidas modelo da Okelly e Anti-sicilianas</span>. 
+                Teremos também 1 vídeo de introdução que servirá como um guia para o curso.
+                <br className="hidden md:block" /><br className="hidden md:block" />
+                Não temos dúvida que a parte dos vídeos dará uma base mais que suficiente para jogadores de até 2000 
+                praticarem a Okelly com confiança. Além disso, os 
+                <span className="font-bold text-[#C6AF78]">arquivos em pgn</span> trarão muito mais detalhes e são 
+                recomendadas para jogadores que precisam de preparação compatível com os torneios profissionais.
+                <br className="hidden md:block" /><br className="hidden md:block" />
+                Novamente temos a convicção que 
+                <span className="font-bold text-[#C6AF78]">nosso curso trará excelentes resultados</span> e que ajudará 
+                ao jogador que estudá-lo a ter boas posições com as pretas depois do lance 1.e4. Muitos alunos ganharam 
+                importantes pontos usando essa efetiva e venenosa arma, venha ganhar partidas com a Okelly você também!
                 </p>
             </div>
             {/* Coluna direita com vídeo e conteúdo em coluna */}
@@ -118,17 +124,14 @@ export default function Home() {
                     Conteúdo
                     </h3>
                     <p className="text-base md:text-lg text-center font-semibold mb-4">
-                    18 vídeos + material em pgn e pdf com 30 partidas modelo, 
-                    divididos nos seguintes módulos:
+                    18 vídeos + material em pgn, divididos nos seguintes módulos:
                     </p>
                     <ul className="text-sm md:text-base list-none text-justify space-y-2">
                     {[
-                        "1...e5",
-                        "Siciliana",
-                        "Caro-Kann",
-                        "Francesa",
-                        "Escandinava, Pirc e Moderna",
-                        "Outras Defesas"
+                        "Sidelines Lance 2",
+                        "Sidelines Lance 3",
+                        "Okelly Aberta 6.Cf3 6.Cb3",
+                        "Partidas Modelo"
                     ].map((item) => (
                         <li
                         key={item}
@@ -150,7 +153,7 @@ export default function Home() {
         <Button
             size="lg"
             className="BG-BLACK hover:bg-yellow-600 text-white text-base md:text-lg"
-            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D", "_blank")}
+            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-de-pretas-com-a-siciliana-okelly/O105064397E?sck=HOTMART_SITE&src=", "_blank")}
             >
             Adquira o Curso
         </Button>
@@ -275,7 +278,7 @@ export default function Home() {
         <Button
             size="lg"
             className="BG-BLACK hover:bg-yellow-600 text-white text-base md:text-lg"
-            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-com-1-e4/Y101233420D", "_blank")}
+            onClick={() => window.open("https://hotmart.com/pt-br/marketplace/produtos/ganhando-de-pretas-com-a-siciliana-okelly/O105064397E?sck=HOTMART_SITE&src=", "_blank")}
             >
             Adquira o Curso
         </Button>
