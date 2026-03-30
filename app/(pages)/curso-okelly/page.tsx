@@ -111,7 +111,7 @@ export default function Home() {
                 </h2>
                 <div className="w-full max-w-xl mx-auto my-8 aspect-video">
                     <iframe
-                        src="https://www.youtube.com/embed/YzKd_a-RiWg"
+                        src="https://www.youtube.com/embed/PXu2xfLghRU"
                         title="Vídeo"
                         allowFullScreen
                         className="w-full h-full rounded-md shadow-lg"
